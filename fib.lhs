@@ -10,7 +10,7 @@
 
 性質チェック
 
-> prop_fib x = (fib !! (x)) == (fib !! (x-1)) + (fib !! (x-2))
+> prop_fib x = (fib !! x) == (fib !! (x-1)) + (fib !! (x-2))
 
-> main = quickCheck $ forAll (((min 100) <$> (max 2) <$> arbitrary) :: Gen Int) prop_fib
+> main = quickCheck $ forAll ((min 100 <$> max 2 <$> arbitrary) :: Gen Int) prop_fib
 
